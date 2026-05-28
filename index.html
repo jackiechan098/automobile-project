@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veloce Motors — Redefine the Road</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Nav -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">Veloce<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#cars">Models</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Stories</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta">Book a Test Drive</button>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#cars" onclick="closeMenu()">Models</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#testimonials" onclick="closeMenu()">Stories</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span>2025 Collection Now Available</span>
+      </div>
+      <h1>Drive <em>Beyond</em><br/>Every Horizon</h1>
+      <p class="hero-sub">Veloce Motors curates the world's most exceptional automobiles — engineered to perfection, crafted for those who refuse to compromise.</p>
+      <div class="hero-actions">
+        <a href="#cars" class="btn-primary">Explore Models</a>
+        <a href="#contact" class="btn-ghost">
+          Schedule a Visit
+          <svg width="18" height="10" viewBox="0 0 18 10" fill="none">
+            <path d="M1 5h16M12 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">340+</div><div class="stat-label">Models Available</div></div>
+      <div class="stat"><div class="stat-num">18</div><div class="stat-label">Years of Excellence</div></div>
+      <div class="stat"><div class="stat-num">4,200</div><div class="stat-label">Satisfied Clients</div></div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <div class="scroll-text">Scroll Down</div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item">Premium Showroom <div class="marquee-dot"></div></div>
+      <div class="marquee-item">Certified Pre-Owned <div class="marquee-dot"></div></div>
+      <div class="marquee-item">Bespoke Financing <div class="marquee-dot"></div></div>
+      <div class="marquee-item">Concierge Service <div class="marquee-dot"></div></div>
+      <div class="marquee-item">Track Day Experience <div class="marquee-dot"></div></div>
+      <div class="marquee-item">24/7 Assistance <div class="marquee-dot"></div></div>
+      <div class="marquee-item">Premium Showroom <div class="marquee-dot"></div></div>
+      <div class="marquee-item">Certified Pre-Owned <div class="marquee-dot"></div></div>
+      <div class="marquee-item">Bespoke Financing <div class="marquee-dot"></div></div>
+      <div class="marquee-item">Concierge Service <div class="marquee-dot"></div></div>
+      <div class="marquee-item">Track Day Experience <div class="marquee-dot"></div></div>
+      <div class="marquee-item">24/7 Assistance <div class="marquee-dot"></div></div>
+    </div>
+  </div>
+
+  <!-- Cars -->
+  <section class="cars-section" id="cars">
+    <div class="cars-header">
+      <div>
+        <div class="section-tag reveal"><div class="tag-line"></div><span>Featured Models</span></div>
+        <h2 class="section-title reveal reveal-delay-1">Handpicked for<br/><em>Discerning Tastes</em></h2>
+      </div>
+      <div class="filter-tabs reveal">
+        <button class="filter-tab active" onclick="filterCars(this,'all')">All</button>
+        <button class="filter-tab" onclick="filterCars(this,'sedan')">Sedan</button>
+        <button class="filter-tab" onclick="filterCars(this,'suv')">SUV</button>
+        <button class="filter-tab" onclick="filterCars(this,'sports')">Sports</button>
+      </div>
+    </div>
+    <div class="cars-grid" id="carsGrid">
+      <div class="car-card featured reveal" data-type="sports">
+        <div class="car-img-wrap">
+          <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&q=80&auto=format" alt="Porsche 911 GT3" loading="lazy"/>
+          <div class="car-badge">New Arrival</div>
+        </div>
+        <div class="car-info">
+          <div class="car-make">Porsche</div>
+          <div class="car-name">911 GT3 RS</div>
+          <div class="car-specs">
+            <div class="spec"><span class="spec-val">525 hp</span><span class="spec-key">Power</span></div>
+            <div class="spec"><span class="spec-val">3.2 s</span><span class="spec-key">0–100 km/h</span></div>
+            <div class="spec"><span class="spec-val">9,000</span><span class="spec-key">RPM Redline</span></div>
+            <div class="spec"><span class="spec-val">Manual</span><span class="spec-key">Transmission</span></div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price"><small>Starting from</small>₹2.85 Cr</div>
+            <div class="card-link"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="car-card reveal reveal-delay-1" data-type="sedan">
+        <div class="car-img-wrap">
+          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=700&q=80&auto=format" alt="BMW M5" loading="lazy"/>
+        </div>
+        <div class="car-info">
+          <div class="car-make">BMW</div>
+          <div class="car-name">M5 Competition</div>
+          <div class="car-specs">
+            <div class="spec"><span class="spec-val">625 hp</span><span class="spec-key">Power</span></div>
+            <div class="spec"><span class="spec-val">3.3 s</span><span class="spec-key">0–100 km/h</span></div>
+            <div class="spec"><span class="spec-val">Auto</span><span class="spec-key">Transmission</span></div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price"><small>Starting from</small>₹1.55 Cr</div>
+            <div class="card-link"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="car-card reveal reveal-delay-2" data-type="suv">
+        <div class="car-img-wrap">
+          <img src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=700&q=80&auto=format" alt="Range Rover" loading="lazy"/>
+          <div class="car-badge">Most Popular</div>
+        </div>
+        <div class="car-info">
+          <div class="car-make">Land Rover</div>
+          <div class="car-name">Range Rover SVR</div>
+          <div class="car-specs">
+            <div class="spec"><span class="spec-val">575 hp</span><span class="spec-key">Power</span></div>
+            <div class="spec"><span class="spec-val">4.5 s</span><span class="spec-key">0–100 km/h</span></div>
+            <div class="spec"><span class="spec-val">AWD</span><span class="spec-key">Drivetrain</span></div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price"><small>Starting from</small>₹2.10 Cr</div>
+            <div class="card-link"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="car-card reveal" data-type="sports">
+        <div class="car-img-wrap">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=700&q=80&auto=format" alt="Ferrari" loading="lazy"/>
+        </div>
+        <div class="car-info">
+          <div class="car-make">Ferrari</div>
+          <div class="car-name">Roma Spider</div>
+          <div class="car-specs">
+            <div class="spec"><span class="spec-val">612 hp</span><span class="spec-key">Power</span></div>
+            <div class="spec"><span class="spec-val">3.4 s</span><span class="spec-key">0–100 km/h</span></div>
+            <div class="spec"><span class="spec-val">Convertible</span><span class="spec-key">Body</span></div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price"><small>Starting from</small>₹3.95 Cr</div>
+            <div class="card-link"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="car-card reveal reveal-delay-1" data-type="sedan">
+        <div class="car-img-wrap">
+          <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=700&q=80&auto=format" alt="Mercedes AMG" loading="lazy"/>
+        </div>
+        <div class="car-info">
+          <div class="car-make">Mercedes-Benz</div>
+          <div class="car-name">AMG GT 63 S</div>
+          <div class="car-specs">
+            <div class="spec"><span class="spec-val">639 hp</span><span class="spec-key">Power</span></div>
+            <div class="spec"><span class="spec-val">3.2 s</span><span class="spec-key">0–100 km/h</span></div>
+            <div class="spec"><span class="spec-val">4MATIC+</span><span class="spec-key">Drivetrain</span></div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price"><small>Starting from</small>₹2.20 Cr</div>
+            <div class="card-link"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="car-card reveal reveal-delay-2" data-type="suv">
+        <div class="car-img-wrap">
+          <img src="https://images.unsplash.com/photo-1563720223809-b42b97e3be4c?w=700&q=80&auto=format" alt="Bentley Bentayga" loading="lazy"/>
+          <div class="car-badge">Exclusive</div>
+        </div>
+        <div class="car-info">
+          <div class="car-make">Bentley</div>
+          <div class="car-name">Bentayga Speed</div>
+          <div class="car-specs">
+            <div class="spec"><span class="spec-val">626 hp</span><span class="spec-key">Power</span></div>
+            <div class="spec"><span class="spec-val">3.9 s</span><span class="spec-key">0–100 km/h</span></div>
+            <div class="spec"><span class="spec-val">AWD</span><span class="spec-key">Drivetrain</span></div>
+          </div>
+          <div class="car-footer">
+            <div class="car-price"><small>Starting from</small>₹4.10 Cr</div>
+            <div class="card-link"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services-section" id="services">
+    <div class="services-layout">
+      <div class="services-left">
+        <div class="section-tag reveal"><div class="tag-line"></div><span>What We Offer</span></div>
+        <h2 class="section-title reveal reveal-delay-1">Beyond the<br/><em>Purchase</em></h2>
+        <p class="section-desc reveal reveal-delay-2">At Veloce, our relationship with you begins — not ends — when you drive out. Every service is tailored to the vehicle and the individual.</p>
+        <div class="service-items">
+          <div class="service-item reveal"><div class="service-num">01</div><div class="service-body"><h3>Bespoke Vehicle Sourcing</h3><p>Can't find the exact configuration you want? Our global sourcing network locates rare trims, colours, and options across 40+ countries — often before they reach local markets.</p></div></div>
+          <div class="service-item reveal"><div class="service-num">02</div><div class="service-body"><h3>Tailored Finance Solutions</h3><p>From balloon payments to lease structuring and tax-efficient ownership models, our specialists design arrangements that match your financial profile precisely.</p></div></div>
+          <div class="service-item reveal"><div class="service-num">03</div><div class="service-body"><h3>Factory Personalisation</h3><p>Work with our in-house consultant to specify custom paint, interior trims, carbon fibre packages, and track-focused upgrades — straight from the manufacturer.</p></div></div>
+          <div class="service-item reveal"><div class="service-num">04</div><div class="service-body"><h3>Annual Maintenance Plans</h3><p>Comprehensive service packages with factory-trained technicians, genuine parts, and 24/7 roadside assistance. Protect your investment, effortlessly.</p></div></div>
+          <div class="service-item reveal"><div class="service-num">05</div><div class="service-body"><h3>Track Day Programme</h3><p>Push your vehicle — and yourself — in controlled, expert-guided track sessions at premier circuits. Available exclusively to Veloce clients.</p></div></div>
+        </div>
+      </div>
+      <div class="services-right reveal reveal-delay-2">
+        <div class="services-visual">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=900&q=80&auto=format" alt="Service excellence" loading="lazy"/>
+          <div class="services-visual-overlay"></div>
+          <div class="services-visual-text">
+            <h4>White Glove<br/>Delivery Experience</h4>
+            <p>Every vehicle is hand-detailed, inspected and delivered to your chosen location — home, office or otherwise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about-section" id="about">
+    <div class="about-layout">
+      <div class="about-images reveal">
+        <img class="about-img-main" src="https://images.unsplash.com/photo-1567818735868-e71b99932e29?w=800&q=80&auto=format" alt="Veloce showroom" loading="lazy"/>
+        <img class="about-img-accent" src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&q=80&auto=format" alt="Engine detail" loading="lazy"/>
+        <div class="about-year">Est. 2007</div>
+      </div>
+      <div class="about-content">
+        <div class="section-tag reveal"><div class="tag-line"></div><span>Our Philosophy</span></div>
+        <h2 class="section-title reveal reveal-delay-1">Where Passion Meets<br/><em>Precision</em></h2>
+        <p class="reveal reveal-delay-2">Veloce Motors was founded in 2007 with a singular conviction: that buying an extraordinary automobile should itself be an extraordinary experience. For nearly two decades, we have operated at the intersection of automotive excellence and genuine human connection.</p>
+        <p class="reveal reveal-delay-2">Every vehicle in our collection is personally inspected by our team of specialists. We don't list cars — we curate experiences. Each model is accompanied by provenance documentation, full service history, and a lifetime advisory relationship with our team.</p>
+        <p class="reveal reveal-delay-2">Our flagship showroom in the heart of Mumbai spans 28,000 sq. ft. across three levels, housing an ever-rotating selection of the world's most sought-after automobiles, a private lounge for clients, and a fully equipped workshop.</p>
+        <div class="about-highlights">
+          <div class="highlight reveal"><div class="highlight-num">4,200+</div><div class="highlight-text">Vehicles Delivered</div></div>
+          <div class="highlight reveal reveal-delay-1"><div class="highlight-num">18 Yrs</div><div class="highlight-text">Industry Expertise</div></div>
+          <div class="highlight reveal reveal-delay-2"><div class="highlight-num">98%</div><div class="highlight-text">Client Satisfaction</div></div>
+          <div class="highlight reveal reveal-delay-3"><div class="highlight-num">40+</div><div class="highlight-text">Global Brands</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="testimonials-header">
+      <div class="section-tag reveal"><div class="tag-line"></div><span>Client Stories</span></div>
+      <h2 class="section-title reveal reveal-delay-1">Words from Those<br/>Who <em>Drive With Us</em></h2>
+    </div>
+    <div class="reveal">
+      <div class="testimonials-track" id="testimonialsTrack">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"Veloce made the entire process of acquiring my GT3 RS completely seamless. From configuration to delivery, they handled everything with a level of care I didn't know was possible in this industry."</p>
+          <div class="testimonial-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80&auto=format" alt="Rohan Mehta"/>
+            <div><div class="author-name">Rohan Mehta</div><div class="author-title">Founder, CapX Ventures</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"I've bought cars from dealers across three continents and Veloce stands apart. The attention to detail, the depth of knowledge, and the post-delivery care are genuinely world-class."</p>
+          <div class="testimonial-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80&auto=format" alt="Priya Kapur"/>
+            <div><div class="author-name">Priya Kapur</div><div class="author-title">Managing Director, Arjun Group</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"The Track Day Programme they offered as part of my delivery package was extraordinary. I've owned the car two years and Veloce's team still call to check in. That's exceptional."</p>
+          <div class="testimonial-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&q=80&auto=format" alt="Aditya Singhania"/>
+            <div><div class="author-name">Aditya Singhania</div><div class="author-title">Architect & Design Principal</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"I walked in looking for a pre-owned Range Rover and left with exactly what I needed — a certified SVR with full factory specification, sourced in two weeks. Remarkable team."</p>
+          <div class="testimonial-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80&auto=format" alt="Nisha Patel"/>
+            <div><div class="author-name">Nisha Patel</div><div class="author-title">Partner, Lumen Advisory</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"The finance structure Veloce put together was more sophisticated than anything my accountant had suggested. Saved considerably on tax while driving something I absolutely love."</p>
+          <div class="testimonial-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format" alt="Karan Bhatia"/>
+            <div><div class="author-name">Karan Bhatia</div><div class="author-title">CEO, Orbis Technologies</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-controls reveal">
+      <button class="ctrl-btn" onclick="slideTestimonials(-1)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="ctrl-btn" onclick="slideTestimonials(1)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section" id="contact">
+    <div class="contact-layout">
+      <div class="contact-info">
+        <div class="section-tag reveal"><div class="tag-line"></div><span>Get in Touch</span></div>
+        <h2 class="section-title reveal reveal-delay-1">Begin Your<br/><em>Journey Here</em></h2>
+        <h3 class="reveal reveal-delay-2">Let's find the perfect vehicle for you</h3>
+        <p class="reveal reveal-delay-2">Whether you have a specific model in mind or simply know the feeling you're after, our advisors will guide you from first conversation to final handover.</p>
+        <div class="contact-details">
+          <div class="contact-detail reveal">
+            <div class="detail-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1a5 5 0 100 10A5 5 0 008 1zM8 14v1M4 13l-1 1M12 13l1 1" stroke="var(--champ)" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+            <div><div class="detail-label">Showroom</div><div class="detail-val">Level 2, Prestige Tower, Lower Parel<br/>Mumbai, Maharashtra — 400 013</div></div>
+          </div>
+          <div class="contact-detail reveal">
+            <div class="detail-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3.5A1.5 1.5 0 014.5 2h.878a1 1 0 01.94.659l.75 2.002a1 1 0 01-.228 1.05L5.5 6.5S6.5 9 9.5 10.5l.789-.84a1 1 0 011.05-.228l2.002.75A1 1 0 0114 11.122V12a1.5 1.5 0 01-1.5 1.5C6.149 13.5 2.5 9.851 2.5 4a1.5 1.5 0 011-1.5z" stroke="var(--champ)" stroke-width="1.2"/></svg>
+            </div>
+            <div><div class="detail-label">Phone</div><div class="detail-val">+91 7738779300<br/>Mon–Sat, 9:00 AM – 7:00 PM</div></div>
+          </div>
+          <div class="contact-detail reveal">
+            <div class="detail-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="var(--champ)" stroke-width="1.2"/><path d="M2 5.5l6 4 6-4" stroke="var(--champ)" stroke-width="1.2"/></svg>
+            </div>
+            <div><div class="detail-label">Email</div><div class="detail-val">enquiries@velocemotors.in<br/>We respond within 2 hours</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal reveal-delay-1">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Rohan"/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Mehta"/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="rohan@example.com"/></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98xxx xxxxx"/></div>
+        <div class="form-group">
+          <label>I'm Interested In</label>
+          <select>
+            <option value="" disabled selected>Select a model or service</option>
+            <option>Porsche 911 GT3 RS</option>
+            <option>BMW M5 Competition</option>
+            <option>Range Rover SVR</option>
+            <option>Ferrari Roma Spider</option>
+            <option>Mercedes-AMG GT 63 S</option>
+            <option>Bentley Bentayga Speed</option>
+            <option>Bespoke Vehicle Sourcing</option>
+            <option>Finance Consultation</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Your Message</label><textarea placeholder="Tell us about your requirements, preferred timeline, or any specific questions…"></textarea></div>
+        <button class="btn-submit" onclick="handleSubmit(event)">Send Enquiry</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">Veloce<span>.</span></a>
+        <p>Premium automobile dealership and advisory — bringing the world's finest vehicles to discerning clients across India since 2007.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Models</h5>
+        <ul>
+          <li><a href="#cars">Sports Cars</a></li>
+          <li><a href="#cars">Luxury Sedans</a></li>
+          <li><a href="#cars">Premium SUVs</a></li>
+          <li><a href="#cars">Convertibles</a></li>
+          <li><a href="#cars">Certified Pre-Owned</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Vehicle Sourcing</a></li>
+          <li><a href="#services">Finance Solutions</a></li>
+          <li><a href="#services">Personalisation</a></li>
+          <li><a href="#services">Maintenance Plans</a></li>
+          <li><a href="#services">Track Days</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About Veloce</a></li>
+          <li><a href="#testimonials">Client Stories</a></li>
+          <li><a href="#contact">Visit Showroom</a></li>
+          <li><a href="#contact">Press Enquiries</a></li>
+          <li><a href="#contact">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Veloce Motors Pvt. Ltd. All rights reserved. &nbsp;·&nbsp; Privacy Policy &nbsp;·&nbsp; Terms</div>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Instagram">Ig</a>
+        <a href="#" class="social-link" aria-label="LinkedIn">Li</a>
+        <a href="#" class="social-link" aria-label="YouTube">Yt</a>
+        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
